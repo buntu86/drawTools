@@ -29,6 +29,7 @@ public class RootLayoutController {
             loader.setLocation(MainApp.class.getResource("/drawtools/echelle/Viewer.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
             Controller echelleController = loader.getController();
+            echelleController.iniListener();
             rootTabPane.getSelectionModel().getSelectedItem().setContent(page);
         } catch (IOException e) {
         e.printStackTrace();
