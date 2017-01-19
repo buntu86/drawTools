@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="478.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.091" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drawtools.echelle.Controller">
+<AnchorPane id="AnchorPane" prefHeight="478.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.091" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drawtools.faconnage.Controller">
    <children>
       <GridPane layoutX="35.0" layoutY="39.0" prefHeight="150.0" prefWidth="203.0">
         <columnConstraints>
@@ -38,12 +38,6 @@
             <TextField fx:id="bTextField" disable="true" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="291.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <!--<Image url="@../../../img/echelleTrace.png" />-->
-            <Image url="@./img/echelleTrace.png" />
-         </image>
-      </ImageView>
       <Line endX="475.0" endY="200.0" startX="25.0" startY="200.0" stroke="#0000003a" strokeWidth="0.75" />
       <Text layoutX="25.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hauteur de texte" underline="true" />
       <Text layoutX="25.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Echelle du tracé" underline="true" />
