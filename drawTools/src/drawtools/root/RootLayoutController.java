@@ -24,10 +24,10 @@ public class RootLayoutController {
     }
 
     public RootLayoutController(){      
+        
     }      
     
     public void iniListener(){
-        showEchelle();
         rootTabPane.getSelectionModel().selectedItemProperty().addListener(
         new ChangeListener<Tab>() {
             @Override
@@ -43,6 +43,9 @@ public class RootLayoutController {
             }
         }
         );        
+        
+        //Choice of tab show on start 0->echelle | 1->faconnage
+        rootTabPane.getSelectionModel().select(1);
     }
     
     public void showEchelle(){
