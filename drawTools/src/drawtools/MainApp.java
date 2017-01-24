@@ -1,5 +1,6 @@
 package drawtools;
 
+import drawtools.faconnage.Diametre;
 import drawtools.root.RootLayoutController;
 import static drawtools.utils.Log.msg;
 import javafx.application.Application;
@@ -21,15 +22,14 @@ public class MainApp extends Application {
     }
     
     public static void main(String[] args) {
-        launch(args);               
+        launch(args);   
     }    
 
     @Override
     public void start(Stage primaryStage) { 
         this.primaryStage = primaryStage;
         setTitlePrimaryStage("");
-        
-        showRootLayout();           
+        showRootLayout();        
     }
     
     public void showRootLayout() {

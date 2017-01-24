@@ -57,19 +57,19 @@ public class RootLayoutController {
             msg(1, "Error Viewer.fxml | " + e.getMessage());
         }
     }
-    
+
     public void showFaconnage(){
         try{
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/drawtools/faconnage/Viewer.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
-            Controller faconnageController = loader.getController();
-            /*rootTabPane.getSelectionModel().getSelectedItem().setContent(page);*/
+            AnchorPane page2 = (AnchorPane) loader.load();
+            //Controller faconnageController = loader.getController();
+            //faconnageController.iniListener();
+            rootTabPane.getSelectionModel().getSelectedItem().setContent(page2);
         } catch (Exception e) {
             msg(1, "Error Viewer.fxml | " + e.getMessage());
         }
-        System.out.println("faconnage");
-    }
+    }    
     
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
