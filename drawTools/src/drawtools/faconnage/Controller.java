@@ -28,6 +28,12 @@ public class Controller implements Initializable {
     private TextField diametreD3;
     
     @FXML
+    private TextField diametreAs;
+
+    @FXML
+    private TextField diametreKg;
+    
+    @FXML
     private Slider slider = new Slider();
     
     private List<Diametre> diametres = new ArrayList<Diametre>();
@@ -42,19 +48,20 @@ public class Controller implements Initializable {
     }    
 
     private void iniDiametres() {
-        diametres.add(new Diametre(6, diametres.size()));
-        diametres.add(new Diametre(8, diametres.size()));
-        diametres.add(new Diametre(10, diametres.size()));
-        diametres.add(new Diametre(12, diametres.size()));
-        diametres.add(new Diametre(14, diametres.size()));
-        diametres.add(new Diametre(16, diametres.size()));
-        diametres.add(new Diametre(18, diametres.size()));
-        diametres.add(new Diametre(20, diametres.size()));
-        diametres.add(new Diametre(22, diametres.size()));
-        diametres.add(new Diametre(26, diametres.size()));
-        diametres.add(new Diametre(30, diametres.size()));
-        diametres.add(new Diametre(34, diametres.size()));
-        diametres.add(new Diametre(40, diametres.size()));     
+        diametres.add(new Diametre(6, diametres.size(),0,0,0,0,40,90,60,60,70,25,50,50));	
+        diametres.add(new Diametre(8, diametres.size(),0,0,0,0,50,100,70,70,100,30,80,60));	
+        diametres.add(new Diametre(10, diametres.size(),0,0,0,0,60,120,100,90,130,40,100,70));	
+        diametres.add(new Diametre(12, diametres.size(),180,310,230,190,70,150,130,110,160,50,120,100));	
+        diametres.add(new Diametre(14, diametres.size(),210,370,260,200,80,170,140,130,180,60,140,120));	
+        diametres.add(new Diametre(16, diametres.size(),240,420,280,240,100,210,160,150,200,70,160,130));	
+        diametres.add(new Diametre(18, diametres.size(),270,470,300,260,110,220,170,170,220,0,0,0));	
+        diametres.add(new Diametre(20, diametres.size(),300,520,350,300,120,240,180,180,240,0,0,0));	
+        diametres.add(new Diametre(22, diametres.size(),330,570,370,360,180,320,250,250,340,0,0,0));	
+        diametres.add(new Diametre(26, diametres.size(),390,680,440,440,210,370,290,290,390,0,0,0));	
+        diametres.add(new Diametre(30, diametres.size(),450,780,480,500,240,420,330,330,450,0,0,0));	
+        diametres.add(new Diametre(34, diametres.size(),510,880,560,600,340,560,350,440,520,0,0,0));	
+        diametres.add(new Diametre(40, diametres.size(),600,1040,680,700,400,640,440,510,640,0,0,0));
+        
         diametres.forEach((diam) -> diametreBox.getItems().add(diam.getDiam()));
     }
     
@@ -74,6 +81,8 @@ public class Controller implements Initializable {
         
         if(diam!=null)
         {
+            diametreAs.setText(String.format("%1$,.1f", diam.getAs()));
+            diametreKg.setText(String.format("%1$,.3f", diam.getKg()));
             diametreD1.setText(Integer.toString(diam.getD1()));
             diametreD2.setText(Integer.toString(diam.getD2()));
             diametreD3.setText(Integer.toString(diam.getD3()));
