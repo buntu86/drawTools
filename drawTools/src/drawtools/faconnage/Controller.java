@@ -4,11 +4,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.util.StringConverter;
@@ -16,28 +13,22 @@ import javafx.util.StringConverter;
 public class Controller implements Initializable {
     
     @FXML
-    private ChoiceBox<Integer> diametreBox = new ChoiceBox<>();  
-    
-    @FXML
-    private TextField diametreD1;
-
-    @FXML
-    private TextField diametreD2;
-    
-    @FXML
-    private TextField diametreD3;
-    
-    @FXML
-    private TextField diametreAs;
-
-    @FXML
-    private TextField diametreKg;
+    private TextField 
+            diametreD1, diametreD2, diametreD3, 
+            diametre_aD1, diametre_aD2, diametre_aD3,
+            diametre_bD1, diametre_bD2, diametre_bD3,
+            diametre_cD1,
+            diametre_aCrochet, diametre_bCrochet,            
+            diametreAs, diametreKg;       
     
     @FXML
     private Slider slider = new Slider();
     
-    private List<Diametre> diametres = new ArrayList<Diametre>();
-    private int diamSelected;
+    private List<Diametre> diametres;
+
+    public Controller() {
+        this.diametres = new ArrayList<>();
+    }
     
     
     @Override
@@ -61,8 +52,6 @@ public class Controller implements Initializable {
         diametres.add(new Diametre(30, diametres.size(),450,780,480,500,240,420,330,330,450,0,0,0));	
         diametres.add(new Diametre(34, diametres.size(),510,880,560,600,340,560,350,440,520,0,0,0));	
         diametres.add(new Diametre(40, diametres.size(),600,1040,680,700,400,640,440,510,640,0,0,0));
-        
-        diametres.forEach((diam) -> diametreBox.getItems().add(diam.getDiam()));
     }
     
     private void iniListener() {
@@ -72,7 +61,6 @@ public class Controller implements Initializable {
     }
     
     private void updateValues(int diamSelected){
-        System.out.println("diamSelected : " + diamSelected);
         Diametre diam = null;
         diam = diametres.stream()
                 .filter(tmpDiam->tmpDiam.getId() == diamSelected)
@@ -86,6 +74,19 @@ public class Controller implements Initializable {
             diametreD1.setText(Integer.toString(diam.getD1()));
             diametreD2.setText(Integer.toString(diam.getD2()));
             diametreD3.setText(Integer.toString(diam.getD3()));
+            
+            diametre_aD1.setText(Integer.toString(diam.get_aD1()));
+            diametre_bD1.setText(Integer.toString(diam.get_bD1()));
+            diametre_cD1.setText(Integer.toString(diam.get_cD1()));
+            
+            diametre_aD2.setText(Integer.toString(diam.get_aD2()));
+            diametre_bD2.setText(Integer.toString(diam.get_bD2()));
+            
+            diametre_aD3.setText(Integer.toString(diam.get_aD3()));
+            diametre_bD3.setText(Integer.toString(diam.get_bD3()));
+            
+            diametre_aCrochet.setText(Integer.toString(diam.get_aCrochet()));
+            diametre_bCrochet.setText(Integer.toString(diam.get_bCrochet()));
         }
     }
 
