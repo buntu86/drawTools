@@ -19,7 +19,8 @@ public class Controller implements Initializable {
             diametre_bD1, diametre_bD2, diametre_bD3,
             diametre_cD1,
             diametre_aCrochet, diametre_bCrochet,            
-            diametreAs, diametreKg;       
+            diametreAs, diametreKg,
+            diametreRecouv50, diametreRecouv60, diametreRecouv70;       
     
     @FXML
     private Slider slider = new Slider();
@@ -71,6 +72,10 @@ public class Controller implements Initializable {
         {
             diametreAs.setText(String.format("%1$,.1f", diam.getAs()));
             diametreKg.setText(String.format("%1$,.3f", diam.getKg()));
+            diametreRecouv50.setText(Integer.toString(diam.getRecouv50()));
+            diametreRecouv60.setText(Integer.toString(diam.getRecouv60()));
+            diametreRecouv70.setText(Integer.toString(diam.getRecouv70()));
+            
             diametreD1.setText(Integer.toString(diam.getD1()));
             diametreD2.setText(Integer.toString(diam.getD2()));
             diametreD3.setText(Integer.toString(diam.getD3()));

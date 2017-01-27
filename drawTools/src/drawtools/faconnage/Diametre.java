@@ -6,7 +6,7 @@ package drawtools.faconnage;
  */
 public class Diametre {
 
-    private int diam, d1, aD1, bD1, cD1, d2, aD2, bD2, aCrochet, bCrochet, d3, aD3, bD3, id;
+    private int diam, d1, aD1, bD1, cD1, d2, aD2, bD2, aCrochet, bCrochet, d3, aD3, bD3, id, recouv50, recouv60, recouv70;
     private double as, kg;
     
     public Diametre(int diam, int id, 
@@ -22,6 +22,7 @@ public class Diametre {
         setD2(d2, aD2, bD2);
         setD3(d3, aD3, bD3);
         setCrochet(aCrochet, bCrochet);
+        setRecouv();
     };
 
     //// GENERAL ////
@@ -115,5 +116,21 @@ public class Diametre {
     }
     public int get_bCrochet() {
         return bCrochet;
+    }    
+
+    //// Recouvrement ////
+    private void setRecouv() {
+        this.recouv50 = diam*50;
+        this.recouv60 = diam*60;
+        this.recouv70 = diam*70;
+    }
+    public int getRecouv50(){
+        return recouv50;
+    }
+    public int getRecouv60(){
+        return recouv60;
+    }
+    public int getRecouv70(){
+        return recouv70;
     }    
 }
