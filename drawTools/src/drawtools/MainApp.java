@@ -1,6 +1,5 @@
 package drawtools;
 
-import drawtools.faconnage.Diametre;
 import drawtools.root.RootLayoutController;
 import static drawtools.utils.Log.msg;
 import javafx.application.Application;

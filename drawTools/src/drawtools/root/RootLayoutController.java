@@ -37,6 +37,8 @@ public class RootLayoutController {
                                 break;
                     case 1:     showFaconnage();
                                 break;
+                    case 2:     showEbea();
+                                break;
                     default:    showEchelle();
                                 break;
                 }
@@ -66,13 +68,22 @@ public class RootLayoutController {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/drawtools/faconnage/Viewer.fxml"));
             AnchorPane page2 = (AnchorPane) loader.load();
-            //Controller faconnageController = loader.getController();
-            //faconnageController.iniListener();
             rootTabPane.getSelectionModel().getSelectedItem().setContent(page2);
         } catch (Exception e) {
             msg(1, "Error Viewer.fxml | " + e.getMessage());
         }
     }    
+
+    public void showEbea(){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("/drawtools/ebea/Viewer.fxml"));
+            AnchorPane page3 = (AnchorPane) loader.load();
+            rootTabPane.getSelectionModel().getSelectedItem().setContent(page3);
+        } catch (Exception e) {
+            msg(1, "Error Viewer.fxml | " + e.getMessage());
+        }    
+    }
     
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
