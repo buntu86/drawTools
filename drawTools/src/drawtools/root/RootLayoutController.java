@@ -75,14 +75,14 @@ public class RootLayoutController {
     }    
 
     public void showEbea(){
-        try{
+        /*try{
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/drawtools/ebea/Viewer.fxml"));
             AnchorPane page3 = (AnchorPane) loader.load();
             rootTabPane.getSelectionModel().getSelectedItem().setContent(page3);
         } catch (Exception e) {
             msg(1, "Error Viewer.fxml | " + e.getMessage());
-        }    
+        }*/    
     }
     
     public void setMainApp(MainApp mainApp) {
